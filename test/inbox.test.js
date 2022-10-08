@@ -4,6 +4,7 @@ const Web3 = require("web3")
 const web3 = new Web3(ganache.provider())
 const {interface, bytecode} = require("../compile.js")
 
+const infuraUrl = "https://goerli.infura.io/v3/9f935a0dec1f43d4aaa7b618ebbf0294"
 let accounts
 let inbox
 
