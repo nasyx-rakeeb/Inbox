@@ -7,10 +7,10 @@ const provider = new HdWalletProvider(phrase, url)
 const web3 = new Web3(provider)
 
 const deploy = async () => {
-  const accounts = web3.eth.getAccouns()
+  const accounts = await web3.eth.getAccouns()
   console.log("Deploying from account: " + accounts[0])
   const result = await web3.eth.Contract(JSON.parse(interface))
-    .deploy({data: bytecode, arguments: ["Helko"]})
+    .deploy({data: bytecode, arguments: ["Hello"]})
     .send({gas: 1000000, from: accounts[0]})
   console.log("Contract successfully depkoyed to address: " + result.options.address)
 }
